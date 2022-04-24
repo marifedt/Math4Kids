@@ -55,7 +55,7 @@ function createQuestion(){
                 var style = window.getComputedStyle(answers[i], null).getPropertyValue('font-size');
                 var fontSize = parseFloat(style); 
                 console.log(fontSize);
-                answers[i].style.fontSize = '70%';
+                answers[i].style.fontSize = 5.2 + "vw";
             }
             textContent.innerHTML = answer;
         } else{
@@ -73,7 +73,7 @@ function createQuestion(){
 }
 
 function checkAnswer(element){
-    if(element.innerHTML == answer){
+    if(element.querySelector('h1').innerHTML == answer){
         createQuestion();
     } else{
         document.querySelector('#error').play();

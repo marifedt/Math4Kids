@@ -40,8 +40,9 @@ function createQuestion(){
     var locAnswer = randomNumber(3);
 
     for (let i = 0; i < answers.length; i++) {
+        let textContent = answers[i].querySelector('h1');
         if(locAnswer === i){
-            answers[i].innerHTML = answer;
+            textContent.innerHTML = answer;
         } else{
             let num = null;
            do {
@@ -49,7 +50,7 @@ function createQuestion(){
                 console.log(answer);
                 console.log(num);
            } while (num == answer);
-           answers[i].innerHTML = num;
+           textContent.innerHTML = num;
            num = null;
         }
     }
@@ -57,7 +58,7 @@ function createQuestion(){
 }
 
 function checkAnswer(element){
-    if(element.innerHTML == answer){
+    if(element.querySelector('h1').innerHTML == answer){
         createQuestion();
     } else{
         document.querySelector('#error').play();
